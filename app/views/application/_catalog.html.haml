@@ -1,0 +1,19 @@
+#s-catalog.section.page-when.page.page-cent.fp-section.fp-table{"data-anchor" => "cat", :style => "height: 609px;"}
+  .fp-tableCell.fp-content{:style => "height: 609px;"}
+    %section.content
+      .catalog-notifier
+        .choose-catalog-box
+          - Category.where("categories.visible = true AND categories.parent_id IS NULL").each do |c|
+            .box
+              %a.cat_main{href: "#{catalog_category_path(c.id)}"}
+                .logo
+                  %img{:alt => "Logo Brand", :src => "/img/logo_large.png"}/
+                = attachment_image_tag(c, :image, :fill, 100, 100, fallback: "default100x100.png", format: "png", class: 'image_uploaded')
+                %span
+                  = c.name
+    %footer.p-footer.p-scrolldown
+      %a{:href => "#fback"}
+        .arrow-d
+          .before Быть на
+          .after связи
+          .circle

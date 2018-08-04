@@ -1,0 +1,33 @@
+= form_for(@category) do |f|
+  - if @category.errors.any?
+    .alert.alert-error
+      %b
+        = pluralize(@category.errors.count, "error")
+        prohibited this user from being saved:
+      %ul
+        - @category.errors.full_messages.each do |msg|
+          %li= msg
+  %table.table.table-striped.table-bordered.table-condensed.table-user-form{:role => "grid"}
+    %tr
+      %td{:scope => "row"}= f.label :name_ru
+      %td= f.text_field :name_ru, class: "name_field"
+    %tr
+      %td{:scope => "row"}= f.label :image
+      %td.file_box
+        = f.attachment_field :image, presigned: true, class: 'file_uploader'
+        .image_box
+          = attachment_image_tag(@category, :image, :fill, 120, 120, fallback: "default120x120.png", class: 'image_uploaded')
+    %tr
+      %td{:scope => "row"}= f.label :visible
+      %td= f.check_box :visible, {}, 'true', 'false'
+    %tr
+      %td{:scope => "row"}= f.label :parent
+      %td= f.select :parent_id, Category.where("categories.parent_id IS NULL").order("parent_id ASC").map { |c| [c.name, c.id] }, :include_blank => true
+    %tr
+      %td= bootstrap_icon_link_to t(:_cansel), categories_path, 'glyphicon glyphicon-time icon-white', :class => "button btn btn-warning"
+      %td= f.submit :class => "button btn btn-success"
+:javascript
+  $('.file_uploader').on('change', function(){
+    src = URL.createObjectURL(this.files[0]);
+    $('.image_box img').attr('src', src);
+  });

@@ -1,0 +1,33 @@
+= content_for :leftpanel do
+  = render partial: 'leftpanel'
+#s-home.section.page-home.page.page-cent.fp-section.active.fp-table{"data-anchor" => "tut", :style => "height: 609px;"}
+  .fp-tableCell.fp-content{:style => "height: 609px;"}
+    / Content
+    %section.content
+      %header.header
+        .h-left
+          %h2
+            %img.h-logo-biggest{:alt => "Vinner Plus", :src => "img/logo-biggest.png"}/
+        .h-right
+          %h3
+            Мебельная
+            = succeed "\u{444}\u{430}\u{431}\u{440}\u{438}\u{43a}\u{430}" do
+              %br/
+          %h4.subhead
+            %a{:href => "#cat"} КАТАЛОГ
+    / Scroll down button
+    %footer.p-footer.p-scrolldown
+      %a{:href => "#cat"}
+        .arrow-d
+          .before Посмотреть
+          .after КАТАЛОГ
+          .circle
+= render partial: 'catalog'
+= render partial: 'feedback'
+= render partial: 'about'
+= render partial: 'contact'
+= content_for :last_script do
+  :javascript
+    $(document).ready(function(callback) {
+      get_fullpages('tut:cat:fback:ab:con');
+    });

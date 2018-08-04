@@ -1,0 +1,19 @@
+if($('#sign_in_modal').length == 0) {
+  $("body").prepend("<%= escape_javascript(render "remote_sign_in", :formats => [:html]) %>");
+}
+
+$("#sign_in_modal").removeClass('fade').addClass('show modal-open');
+$('body').addClass('show modal-open');
+$("#sign_in_modal .close").on('click', function(){
+  $("#sign_in_modal").addClass('fade').removeClass('show modal-open');
+  $('body').removeClass('show modal-open');
+});
+
+//Gravatar
+$('#sign_in_modal input.email').change( function() {
+  email = $(this).val();
+  if(isValidEmailAddress(email)){
+    avatar = Gravtastic(email, { size: 300});
+    $('.avatar img').attr('src', avatar);
+  }
+});

@@ -1,0 +1,4 @@
+.controll-group-session
+  = collection_select(:category, :category_id, Category.where("categories.parent_id IS NULL"), :id, :name, {:selected => session["category"]})
+:javascript
+  choose_category();

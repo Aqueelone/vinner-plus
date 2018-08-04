@@ -1,0 +1,47 @@
+#adminpanel
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend
+        = t('activerecord.attributes.gallery.index')
+      = bootstrap_icon_link_to t('admins.admin_panel.new_gallery'), new_gallery_path, "glyphicon glyphicon-plus icon-white", :class => "button btn btn-success"
+      %table.table.table-index.table-bordered.table-condensed{:role => "grid"}
+        %thead
+          %tr
+            %th{:scope => "column"}
+              = t('activerecord.attributes.gallery.name')
+            %th{:scope => "column"}
+              = t('activerecord.attributes.gallery.description')
+            %th{:scope => "column"}
+              = t('activerecord.attributes.gallery.image')
+            %th{:scope => "column"}
+              = t('activerecord.models.product')
+            %th{:scope => "column"}
+              = t('admins.headers.images')
+            %th{:scope => "column"}
+        %tbody
+          - @galleries.each do |b|
+            %tr
+              %td= b.name
+              %td= b.description
+              %td
+                -if(!(im = Image.where("images.gallery_id = #{b.id}").first).blank?)
+                  = attachment_image_tag(Image.find(im) || Image.new, :file, :fill, 90, 120, fallback: "default300x100.png", class: 'image_uploaded')
+              %td= b.product_id && Product.find_by_id(b.product_id) && (bootstrap_icon_link_to t(:_show), Product.find(b.product_id), "glyphicon glyphicon-search icon-white", method: :get, :class => "button btn btn-small btn-primary")
+              %td= b.images.count
+              %td
+                = bootstrap_icon_link_to t(:_show), b, "glyphicon glyphicon-book icon-white", method: :get, :class => "button btn btn-small btn-primary"
+                = bootstrap_icon_link_to t(:_edit), edit_gallery_path(b), "glyphicon glyphicon-pencil icon-white", :class => "button btn btn-small btn-primary"
+                = bootstrap_icon_link_to t(:_delete), b, "glyphicon glyphicon-trash icon-white", confirm: 'Are you sure?', method: :delete, :class => "button btn btn-small btn-danger"
+                %br
+                %span
+                  in:
+                %br
+                = b.category_id && Category.find(b.category_id).name
+:javascript
+  $('.navbar-nav li').removeClass('active');
+  $('.navbar-nav li.btn-nav-adminpanel').addClass('active');
+  $('.adminbar-nav li').removeClass('active');
+  $('.adminbar-nav li.btn-nav-gallery').addClass('active');
+  $('.adminbar-nav li.btn-nav-gallery > ul > li').removeClass('active');

@@ -1,0 +1,73 @@
+pl:
+  home-slider:
+    t1: 'Prosta droga do sukcesu!'
+    t2: 'Świat tekstyliów'
+  about:
+    p1: ''
+    p2: ''
+    p3: ''
+    p4: 'Zapraszamy do Światu Marbi!'
+  _applications: "Aplikacje"
+  _about: "O nas"
+  _contact_us: "Komunikacja"
+  _comments: "Komentarze"
+  _contacts: "Kontakty"
+  _catalog: "Katalog"
+  _order: "Rozkaz"
+  _help: "Pomoc"
+  _home: "Główna"
+  _photos: "Zdjęcia"
+  _services: "Usługi"
+  _statistics: "Statystyki"
+  _terms: "warunki"
+  _furthermore: "dodatkowo..."
+  _showcase: "showcase"
+  _grid: "siatka"
+  _topic: "Tematy stron"
+  account: "Konto"
+  title: 'Świat Marbi'
+  orders:
+    new:
+      header: "Nowe Zamówienie"
+      name: "imię i nazwisko"
+      email: "e-mail"
+      cell: "mobilny telefon"
+      comment: "komentarz"
+      pname: "wpisz imię i nazwisko..."
+      pemail: "wpisz e-mail..."
+      pcell: "wpisz numer telefonu komórkowego..."
+      pcomment: "napisz komentarz..."
+      cost: "Całkowity koszt"
+      payment: "Typ płatności"
+      place: "Złóż zamówienie"
+    items:
+      caption: "Dołączone poz zamówienie:"
+      amount: "Liczba"
+      total: "Razem"
+      sizes: "Rozmiary u pakietu"
+      preview: "Przegląd"
+      pcode: "Kod towaru"
+      color: "Kolor"
+      approve:
+        yes: "wyślij zamówienie!"
+        no: "Brak kontaktów do podłączenia!"
+    history:
+      header: "Historia Zamówień"
+      blank: "Historii jeszcze nie..."
+      table:
+        order_status: "status"
+        payment_type: "typ płatności"
+        updated_at: "aktualizowane w"
+        your_manager: "Twój menedżer"
+        items: "pozycji"
+        total: "tylko"
+  product:
+      add_order: "dodać do zamówienia"
+      back_to_catalog:  "powrót do katalogu"
+      move_to_order:  "przejdź na zamówienie"
+  category:
+      two: "Koszule męskie z długim rękawem"
+      three: "Koszule męskie z krótkim rękawem"
+      ten: "Koszulki męskie"
+  contactus:
+      desc: "Contact us and we answer to all Your questions!"

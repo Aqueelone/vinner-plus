@@ -1,0 +1,24 @@
+#adminpanel
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend
+        Profile of image:
+        = @image.title
+      %table.table.table-striped.table-bordered.table-condensed.table-user-profile{:role => "grid"}
+        %tr
+          %td{:scope => "row"} Description
+          %td= @image.description
+        %tr
+          %td{:scope => "row"} Category
+          %td= @image.category_id && Category.find(@image.category_id).name
+        %tr
+          %td{:scope => "row"} Image
+          %td= attachment_image_tag(@image, :file, :fill, 400, 300, fallback: "default300x400.png")
+        %tr
+          %td{:scope => "row"}
+          %td
+            = bootstrap_icon_link_to t(:_edit), edit_image_path(@image), "glyphicon glyphicon-pencil icon-white", :class => "button btn btn-small btn-primary"
+            - if current_user.is_admin
+              = bootstrap_icon_link_to t(:_delete), @image, "glyphicon glyphicon-trash icon-white", confirm: 'Are you sure?', method: :delete, :class => "button btn btn-small btn-danger"

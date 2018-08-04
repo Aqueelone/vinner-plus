@@ -1,0 +1,161 @@
+ru:
+  home-slider:
+    t1: 'Лёгкий путь достигнуть успеха!'
+    t2: 'мир текстиля'
+  #about_as_page
+  about:
+    p1: ''
+    p2: ''
+    p3: ''
+    p4: 'Добро пожаловать в Мир Марби!'
+  # Standard words
+  title: 'Мир Марби'
+  _lang: "по-русски"
+  _about: "Про нас"
+  _contact_us: "Связь с нами!"
+  _accessories: "Комплектующие"
+  _applications: "Приложения"
+  _comments: "Комментарии"
+  _contacts: "Контакты"
+  _catalog: "Каталог"
+  _order: "Заказ"
+  _help: "Помощь"
+  _home: "Главная"
+  _photos: "Фотографии"
+  _services: "Сервисы"
+  _statistics: "Статистика"
+  _terms: "условия"
+  _furthermore: "подробнее..."
+  _showcase: "витрина"
+  _grid: "сетка"
+  _show: "просмотр"
+  _edit: "редактировать"
+  _delete: "удалить"
+  _new: "новый"
+  _cansel: "отмена"
+  _topic: "Розделы сайта"
+  account: "Аккаунт"
+  orders:
+    new:
+      header: "Новый заказ"
+      name: "фамилия и имя"
+      email: "електронная почта"
+      cell: "номер мобильного"
+      comment: "комментарий"
+      pname: "впишите фамилию и имя..."
+      pemail: "впишите електронную почту..."
+      pcell: "впишите номер мобильного..."
+      pcomment: "напишите комментарий.."
+      cost: "Общая стоимость"
+      payment: "Тип платежа"
+      place: "Оформить Заказ"
+    items:
+      caption: "Включено позиции заказа:"
+      amount: "Количество"
+      total: "Всего"
+      sizes: "Размеров в ростовке"
+      preview: "Просмотр"
+      pcode: "Код товара"
+      color: "Цвет"
+      approve:
+        yes: "ОФОРМИТЬ ЗАКАЗ!"
+        no: "Нету контактов для связи!"
+    history:
+      header: "История Заказов"
+      blank: "Истории еще нету..."
+      table:
+        order_status: "состояние"
+        payment_type: "тип платежа"
+        updated_at: "обновлено в"
+        your_manager: "Ваш менеджер"
+        items: "позиций"
+        total: "всего"
+  product:
+      add_order: "добавить к заказу"
+      back_to_catalog:  "вернутся к каталогу"
+      move_to_order:  "перейти к заказу"
+  category:
+      two: "Мужские рубашки с длинными рукавами"
+      three: "Мужские рубашки с короткими рукавами"
+      ten: "Мужские футболки"
+  contactus:
+      desc: "Свяжитесь с нами и мы ответим на все Ваши вопросы!"
+  activerecord:
+    models:
+      product: "Товар"
+      category: "Категория"
+      brand: "Бренд"
+      color: "Цвет"
+      dashboard: "Доска"
+      fabric: "Ткань"
+      gallery: "Галерея"
+      image: "Фото"
+      messenger: "Коммуникатор"
+      order: "Заказ"
+      order_item: "Позиции"
+      order_status: "Статус"
+      payment_type: "Тип платежа"
+      product_code: "Товарный код"
+      size: "Розмер"
+      user: "Пользователь"
+    attributes:
+      product:
+        name: "название"
+        brand: "бренд"
+        category: "категория"
+        description: "описание"
+        price: "цена"
+        amount: "кол.-во"
+        sizes: "размеры"
+        cut_type: "тип покроя"
+        collar_type: "тип воротника"
+        sleeve_type: "тип рукава"
+        cuff_type: "тип манжета"
+        style_type: "стиль"
+        picture: "изображение"
+        index: "Список Товаров:"
+        profile: "Описание товара: "
+        edit: "Редактирование товара: "
+        new: "Добавление товара: "
+      fabric:
+        name: "название"
+        category: "категория"
+        description: "описание"
+        image: "изображение"
+        composition: "состав"
+        index: "Список Тканей:"
+        profile: "Описание ткани: "
+        edit: "Редактирование ткани: "
+        new: "Добавление ткани: "
+      gallery:
+        name: "название"
+        category: "категория"
+        description: "описание"
+        image: "изображение"
+        index: "Список Галерей:"
+        profile: "Описание галереи: "
+        edit: "Редактирование галереи: "
+        new: "Добавление галереи: "
+        add_fabric: "определить ткань"
+        fabric: "ткань"
+        add_color: "определить цвет"
+        new_color: "новый цвет"
+      category:
+        name: "название"
+        name_ua: "название(укр)"
+        name_ru: "название(рус)"
+        name_en: "название(анг)"
+        description: "описание"
+        visible: "видимо"
+        parent: "родитель"
+        image: "изображение"
+        index: "Список Категорий:"
+        profile: "Описание категории: "
+        edit: "Редактирование категории: "
+        new: "Добавление категории: "
+  registrations:
+    new:
+      sign_up: "Регистрация"
+  layouts:
+    header:
+      login: "Логин"

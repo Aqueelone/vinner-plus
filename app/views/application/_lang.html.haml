@@ -1,0 +1,12 @@
+.lang_panel
+  - langA = ['uk', 'ru', 'en', 'be', 'tr', 'pl' ]
+  - req = request.fullpath
+  - langA.each do |lang|
+    - lang == 'uk' && ((flag = 'ua') && (title = "українською"))
+    - lang == 'ru' && ((flag = 'ru') && (title = "по-русски"))
+    - lang == 'en' && ((flag = 'us') && (title = "for english"))
+    - lang == 'tr' && ((flag = 'tr') && (title = "türkçe"))
+    - lang == 'pl' && ((flag = 'pl') && (title = "w języku polskim"))
+    - lang == 'be' && ((flag = 'by') && (title = "па беларуску"))
+    %a{href: "http://#{lang}.mirmarbi.com/#{req}", class: "flag-icon flag-#{lang}", title: "#{title}", alt: "#{title}"}
+      %img{src: "/flags/#{flag}.png"}

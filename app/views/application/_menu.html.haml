@@ -1,0 +1,49 @@
+.logo
+  %a{:href => "#{root_path}"}
+    %img{:alt => "Logo Brand", :src => "/img/logo_large.png"}/
+.menu.clearfix
+  %a{:href => "/#cat"}
+    %i{class: [ 'fa', 'fa-book']}
+    =t(:_catalog)
+  %a{:href => "/#ab"}
+    %i{class: [ 'fa', 'fa-info-circle']}
+    =t(:_about)
+  %a{:href => "/#con"}
+    %i{class: [ 'fa', 'fa-pencil-square-o']}
+    =t(:_contact_us)
+.logo-container
+  %img.h-logo{:alt => "Logo", :src => "/img/logo_only.png"}/
+%ul{class: ['nav', 'navbar-nav', 'navbar-right']}
+  /%li{class: ['direct', 'btn-abs-cart']}
+  / %a{href: "#order", class: 'button btn'}
+  /  %i{class: [ 'glyphicon', 'glyphicon-shopping-cart']}
+  / .inner
+  /  %span.item
+  /   0 item
+  /%br
+  /%span.value
+  / 0 $
+  - if current_user
+    %li{class: ['remote-modal']}
+      %a{href: '/sign_out', class: 'gradient'}
+        %i{class: [ 'fa', 'fa-sign-out']}
+        = t('layouts.header.logout')
+    - if current_user.is_admin
+      %li{class: ['remote-modal', 'btn-nav-adminpanel']}
+        %a{href: '/adminpanel', class: 'gradient'}
+          %i{class: [ 'fa', 'fa-cogs']}
+          Admin panel
+    - else
+      %li{class: ['direct', 'btn-nav-user', 'remote-modal']}
+        = link_to edit_user_password_path(current_user) do
+          %i{class: [ 'fa', 'fa-user']}
+          =t('account')
+  - else
+    %li{class: ['remote-modal']}
+      = link_to remote_sign_in_path, :remote => true do
+        %i{class: [ 'fa', 'fa-sign-in']}
+        = t('layouts.header.login')
+    %li{class: ['remote-modal']}
+      = link_to remote_sign_up_path, :remote => true do
+        %i{class: [ 'fa', 'fa-user-plus']}
+        = t('registrations.new.sign_up')

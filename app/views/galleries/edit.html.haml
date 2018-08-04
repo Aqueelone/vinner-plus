@@ -1,0 +1,10 @@
+#adminpanel
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend
+        = t('activerecord.attributes.gallery.edit') + @gallery.name
+      = render 'form'
+:javascript
+  admit_gallery();

@@ -1,0 +1,133 @@
+#s-contact.section.page-contact.page.page-cent.bg-color.fp-section{"data-anchor" => "con", "data-bgcolor" => "rgba(95, 25, 208, 0.88)s", :style => "height: 609px;"}
+  / Begin of contact information
+  .fp-slides
+    #information.slide.fp-slide.fp-table.active{:style => "width: 50%;"}
+      .fp-tableCell.fp-content{:style => "height: 609px;"}
+        %section.content
+          %header.p-title
+            %h3
+              Наши контакты!
+              %i.ion.ion-location
+            %ul.buttons
+              %li.show-for-medium-up
+                %a{:href => "#con", :title => "Контакты"}
+                  %i.ion.ion-android-information
+              %li
+                %a{:href => "#con/1", :title => "Написать нам"}
+                  %i.ion.ion-email
+              %li
+                %a{:href => "#con/2", :title => "Онлайн ЧАТ"}
+                  %i.ion.ion-chatboxes
+            / Begin Of Page SubSction
+          .contact
+            .row
+              .medium-6.columns.left
+                %ul
+                  %li
+                    %h4 Email
+                    %p
+                      %a{:href => "mailto://sergkoval@gmail.com"} sergkoval@gmail.com"
+                  %li
+                    %h4 Address
+                    %p
+                      Хмельницкий
+                      = succeed "\u{443}\u{43b}.\u{417}\u{430}\u{440}\u{435}\u{447}\u{430}\u{43d}\u{441}\u{43a}\u{430}\u{44f}" do
+                        %br/
+                  %li
+                    %h4 Phone
+                    %p
+                      %strong Отдел технологии и дизайна:
+                      %br/
+                      +380 673947080
+                    %p
+                      %strong Дирекция:
+                      %br/
+                      +380 677008835
+              .medium-6.columns.social-links.right
+                %ul
+                  / legal notice
+                  %li.show-for-medium-up
+                    %h4 Website
+                    %p
+                      %a{:href => "http://www.vinner-plus.com"} www.vinner-plus.com
+                  %li.show-for-medium-up
+                    %h4 Найди нас на
+                    / Begin of Social links
+                    .socialnet
+                      %a{:href => "#"}
+                        %i.ion.ion-social-facebook
+                      %a{:href => "#"}
+                        %i.ion.ion-social-instagram
+                      %a{:href => "#"}
+                        %i.ion.ion-social-twitter
+                      %a{:href => "#"}
+                        %i.ion.ion-social-pinterest
+                      %a{:href => "#"}
+                        %i.ion.ion-social-tumblr
+                    / End of Social links
+                  %li
+                    %p
+                      %img.logo{:alt => "Logo", :src => "img/logo_large.png"}/
+    / End of page SubSection
+    #s-message.slide.fp-slide.fp-table{:style => "width: 50%;"}
+      .fp-tableCell.fp-content{:style => "height: 609px;"}
+        %section.content
+          %header.p-title
+            %h3
+              Напишите нам!
+              %i.ion.ion-email
+            %ul.buttons
+              %li.show-for-medium-up
+                %a{:href => "#con", :title => "Контакты"}
+                  %i.ion.ion-android-information
+              %li
+                %a{:href => "#con/1", :title => "Написать нам"}
+                  %i.ion.ion-email
+              %li
+                %a{:href => "#con/2", :title => "Онлайн ЧАТ"}
+                  %i.ion.ion-chatboxes
+          /
+          /      <li>
+          /      <a title="Message" href="#contact/message"><i class="ion ion-email"></i></a>
+          /      </li>
+          / Begin Of Page SubSction
+          .page-block.c-right.v-zoomIn
+            .wrapper
+              %div
+                %form.message.form.send_message_form{:action => "ajaxserver/serverfile.php", :method => "get"}
+                  .fields.clearfix
+                    .input
+                      %label{:for => "mes-name"} Имя
+                      %input#mes-name{:name => "name", :placeholder => "Ваше имя", :required => "", :type => "text"}/
+                    .buttons
+                      %button#submit-message.button.email_b{:name => "submit_message"} Ok
+                  .fields.clearfix
+                    .input
+                      %label{:for => "mes-email"} Email
+                      %input#mes-email{:name => "email", :placeholder => "Ваш Email", :required => "", :type => "email"}/
+                  .fields.clearfix.no-border
+                    %label{:for => "mes-text"} Сообщение
+                    %textarea#mes-text{:name => "message", :placeholder => "Ваше сообщение напишите здесь ...", :required => ""}
+                    %div
+                      %p.message-ok.invisible Ваше сообщение отправлено, СПАСИБО!.
+    / End Of Page SubSction
+    #s-chat.slide.fp-slide.fp-table{:style => "width: 50%;"}
+      .fp-tableCell.fp-content{:style => "height: 609px;"}
+        %section.content
+          %header.p-title
+            %h3
+              Он-лайн ЧАТ
+              %i.ion.ion-chatboxes
+            %ul.buttons
+              %li.show-for-medium-up
+                %a{:href => "#con", :title => "Контакты"}
+                  %i.ion.ion-android-information
+              %li
+                %a{:href => "#con/1", :title => "Написать нам"}
+                  %i.ion.ion-email
+              %li
+                %a{:href => "#con/2", :title => "Онлайн ЧАТ"}
+                  %i.ion.ion-chatboxes
+
+  .fp-controlArrow.fp-prev
+  .fp-controlArrow.fp-next

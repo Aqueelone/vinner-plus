@@ -1,0 +1,48 @@
+#adminpanel
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend List of users
+      = bootstrap_icon_link_to t('admins.admin_panel.new_user'), new_user_path, "glyphicon glyphicon-plus icon-white", :class => "button btn btn-success btn-new"
+      %table.table.table-index.table-striped.table-bordered.table-condensed{:role => "grid"}
+        %thead
+          %tr
+            %th{:scope => "column"}
+              = t('admins.headers.name_p')
+            %th{:scope => "column"} email
+            %th{:scope => "column"}
+              = t('admins.headers.cell')
+            %th{:scope => "column"} networks
+            %th{:scope => "column"} s.i.count
+            %th{:scope => "column"}
+              = t('admins.headers.temporary')
+            %th{:scope => "column"}
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td
+                = user.name
+                - if user.is_admin
+                  %span.label.label-info
+                    = t('admins.headers.is_admin')
+                - if user.is_moderator
+                  %span.label.label-info
+                    = t('admins.headers.is_moderator')
+              %td= user.email
+              %td= user.cell
+              %td
+                - result = ''
+                - user.identities.each { |ident| result += ident.provider.to_s + ' ' }
+                = result
+              %td= user.sign_in_count
+              %td= user.temporary
+              %td
+                = bootstrap_icon_link_to t('layouts.header.profile'), user, "glyphicon glyphicon-user icon-white", method: :get, :class => "button btn btn-small btn-primary"
+                = bootstrap_icon_link_to t(:_edit), edit_user_path(user), "glyphicon glyphicon-pencil icon-white", :class => "button btn btn-small btn-primary"
+                = bootstrap_icon_link_to t(:_delete), user, "glyphicon glyphicon-trash icon-white", confirm: 'Are you sure?', method: :delete, :class => "button btn btn-small btn-danger"
+:javascript
+  $('.navbar-nav li').removeClass('active');
+  $('.navbar-nav li.btn-nav-adminpanel').addClass('active');
+  $('.adminbar-nav li').removeClass('active');
+  $('.adminbar-nav li.btn-nav-user').addClass('active');

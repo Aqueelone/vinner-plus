@@ -1,0 +1,56 @@
+= content_for :leftpanel do
+  %section#incatalog
+    - category_top = @category.parent_id ? Category.find(@category.parent_id) : @category
+    .hero
+      .page-title
+        %h1.headline
+          = attachment_image_tag(category_top, :image, :fill, 100, 100, format: "png", fallback: "default100x100.png", class: 'image_uploaded')
+          - t = category_top.name.split(' ')
+          - part = ''
+          - flag = 0
+          .category_title
+            - t.each do |t_part|
+              - part += t_part + ' '
+              - if(flag == 1)
+                %span.title
+                  = part
+                - part = ''
+                - flag = 0
+              - else
+                - flag = 1
+            %span.title
+              = part
+        .choose-catalog-box
+          - Category.where("categories.visible = true AND categories.parent_id IS NULL").each do |c|
+            .box{class: "#{(@category.id == c.id || @category.parent_id == c.id)? 'active' : ''}"}
+              %a.cat_main{href: "#{catalog_category_path(c.id)}", title: "#{c.name}"}
+                = attachment_image_tag(c, :image, :fill, 50, 50, format: "png", fallback: "default60x60.png", class: 'image_uploaded')
+      .category-notifier
+        .choose-catalog-box
+          - Category.where("categories.visible = true AND categories.parent_id = #{category_top.id}").each do |c|
+            - if (category_top.id == @category.id) then
+              :javascript
+                  window.location.href = "#{catalog_category_path(c.id)}";
+            .box{class: "#{(@category.id == c.id)? 'active' : ''}"}
+              %a.cat_main{href: "#{catalog_category_path(c.id)}"}
+                %span
+                  = c.name
+%section#image-list
+  - @images.each do |i|
+    .section.page-home.page.page-cent.fp-section{"data-anchor" => "#{'img'+i.id.to_s}"}
+      .image-container
+        .image-body
+          = attachment_image_tag(i, :file, :fill, 800, 600, fallback: "default800x600.png", class: 'image_uploaded')
+        .image-description
+          .image-text
+            %h2
+              = i.title
+            %p
+              = i.description
+          .image-button
+= content_for :last_script do
+  - @images_ids = @images.map {|c| 'img'+c.id.to_s}  * ":"
+  :javascript
+    $(document).ready(function(callback) {
+      get_fullpages("#{@images_ids}");
+    });

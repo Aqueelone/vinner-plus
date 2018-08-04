@@ -1,0 +1,29 @@
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: vinner
+  pool:     5
+  username: admin
+  password: aqu16
+  template: template0
+
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: vinner_test
+  pool:     5
+  username: vinner
+  password: CfqnLkzCthtub
+  template: template0
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: vinner
+  pool:     5
+  username: admin
+  password: aqu16
+  template: template0

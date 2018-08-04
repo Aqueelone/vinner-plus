@@ -1,0 +1,13 @@
+#adminpanel
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend
+        = t('activerecord.attributes.category.new')
+      = render 'form'
+:javascript
+  $('.navbar-nav li').removeClass('active');
+  $('.navbar-nav li.btn-nav-adminpanel').addClass('active');
+  $('.adminbar-nav li').removeClass('active');
+  $('.adminbar-nav li.btn-nav-category').addClass('active');

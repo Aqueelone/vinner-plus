@@ -1,0 +1,72 @@
+tr:
+  home-slider:
+    t1: 'Başarıya ulaşmak için kolay yolu!'
+    t2: 'tekstil dünyası'
+  about:
+    p1: ''
+    p2: ''
+    p3: ''
+    p4: 'Marbi Dünyasına Hoşgeldiniz!'
+  _applications: "Uygulamalar"
+  _comments: "Yorumlar"
+  _about: "Hakkımızda"
+  _contact_us: "Bizimle İletişim!"
+  _contacts: "Kişiler"
+  _catalog: "Rehberг"
+  _order: "Sipariş"
+  _help: "Yardım"
+  _home: "Ev"
+  _photos: "fotoğraflar"
+  _services: "Servisler"
+  _terms: "Kurallar"
+  _furthermore: "ayrıca..."
+  _showcase: "vitrin"
+  _grid: "ızgara"
+  _topic: "Site konular"
+  account: "Hesap"
+  title: 'Marbi Dünya'
+  orders:
+    new:
+      header: "Yeni Sipariş"
+      name: "adı ve soyadı"
+      email: "e-posta"
+      cell: "cep telefonun"
+      comment: "yorumun"
+      pname: "adı ve soyadı girin..."
+      pemail: "e-posta adresinizi girin..."
+      pcell: "cep telefonu numaranızı girin..."
+      pcomment: "yorumun yazmak..."
+      cost: "Toplam tutar"
+      payment: "Ödeme türü"
+      place: "Siparişi Gönder"
+    items:
+      caption: "Dahil sipariş öğeleri:"
+      amount: "Miktar"
+      total: "Toplam"
+      sizes: "Bedenler paketine dahil"
+      preview: "Önizleme"
+      pcode: "Ürün Kodu"
+      color: "Renk"
+      approve:
+        yes: "SİPARİŞ GÖNDER!"
+        no: "Hayır oran kommunikation kontakts!"
+    history:
+      header: "Siparişler Tarih"
+      blank: "Hayır tarih henüz..."
+      table:
+        order_status: "durum"
+        payment_type: "ödeme şekli"
+        updated_at: "güncellenen"
+        your_manager: "Müdürünüz"
+        items: "parça"
+        total: "toplam"
+  product:
+      add_order: "Sipariş eklemek"
+      back_to_catalog:  "geri Katalog"
+      move_to_order:  "Sipariş çevirmek"
+  category:
+      two: "uzun kollu erkek gömlekler"
+      three: "kısa kollu erkek gömlekler"
+      ten: "erkek t-shirt"
+  contactus:
+      desc: "Contact us and we answer to all Your questions!"

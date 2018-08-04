@@ -1,0 +1,50 @@
+#adminpanel.parallax
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend
+        Profile of #{@user.name}:
+      %table.table.table-striped.table-bordered.table-condensed.table-user-profile{:role => "grid"}
+        %tr
+          %td{:scope => "row"}
+            = t('admins.headers.name_p')
+          %td
+            = @user.name
+            - if @user.is_admin
+              %span.label.label-info
+                = t('admins.headers.is_admin')
+            - if @user.is_moderator
+              %span.label.label-info
+                = t('admins.headers.is_moderator')
+        %tr
+          %td{:scope => "row"} email
+          %td= @user.email
+        %tr
+          %td{:scope => "row"} Current SignIn at
+          %td= @user.current_sign_in_at
+        %tr
+          %td{:scope => "row"} Last SignIn at
+          %td= @user.last_sign_in_at
+        %tr
+          %td{:scope => "row"} Current SignIn IP
+          %td= @user.current_sign_in_ip
+        %tr
+          %td{:scope => "row"} Last SignIn IP
+          %td= @user.last_sign_in_ip
+        %tr
+          %td{:scope => "row"} SignInCount
+          %td= @user.sign_in_count
+        %tr
+          %td{:scope => "row"}
+            = image_tag @user.gravatar_url
+          %td
+            - if current_user && (@user.id == current_user.id || current_user.is_admin || current_user.is_moderator)
+              = bootstrap_icon_link_to t(:_edit), edit_user_path(@user), "glyphicon glyphicon-pencil icon-white", :class => "button btn btn-small btn-primary"
+              - if current_user.is_admin
+                = bootstrap_icon_link_to t(:_delete), @user, "glyphicon glyphicon-trash icon-white", confirm: 'Are you sure?', method: :delete, :class => "button btn btn-small btn-danger"
+:javascript
+  $('.navbar-nav li').removeClass('active');
+  $('.navbar-nav li.btn-nav-adminpanel').addClass('active');
+  $('.adminbar-nav li').removeClass('active');
+  $('.adminbar-nav li.btn-nav-user').addClass('active');

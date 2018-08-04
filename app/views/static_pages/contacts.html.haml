@@ -1,0 +1,123 @@
+#s-contact.section.page-contact.page.page-cent.bg-color.fp-section{"data-anchor" => "con", "data-bgcolor" => "rgba(95, 25, 208, 0.88)s", :style => "height: 609px;"}
+  / Begin of contact information
+  .fp-slides
+    .fp-slidesContainer{:style => "width: 200%;"}
+      #information.slide.fp-slide.fp-table.active{"data-anchor" => "con/info", :style => "width: 50%;"}
+        .fp-tableCell.fp-content{:style => "height: 609px;"}
+          %section.content
+            %header.p-title
+              %h3
+                Contact
+                %i.ion.ion-location
+              %ul.buttons
+                %li.show-for-medium-up
+                  %a{:href => "#about-us", :title => "About"}
+                    %i.ion.ion-android-information
+                /
+                /  <li>
+                /  <a title="Contact" href="#contact/information"><i class="ion ion-location"></i></a>
+                /  </li>
+                %li
+                  %a{:href => "#mssg", :title => "Message"}
+                    %i.ion.ion-email
+            / Begin Of Page SubSction
+            .contact
+              .row
+                .medium-6.columns.left
+                  %ul
+                    %li
+                      %h4 Email
+                      %p
+                        %a{:href => "mailto://sergkoval@gmail.com"} sergkoval@gmail.com"
+                      %p
+                        %a{:href => "mailto://mikita67@gmail.com"} mikita67@gmail.com"
+                    %li
+                      %h4 Address
+                      %p
+                        Хмельницкий
+                        = succeed "\u{443}\u{43b}.\u{417}\u{430}\u{440}\u{435}\u{447}\u{430}\u{43d}\u{441}\u{43a}\u{430}\u{44f}" do
+                          %br/
+                    %li
+                      %h4 Phone
+                      %p
+                        %strong Отдел технологии и дизайна:
+                        %br/
+                        +380 673947080
+                        +380 980669464
+                      %p
+                        %strong Дирекция:
+                        %br/
+                        +380 673823377
+                        +380 677008835
+                .medium-6.columns.social-links.right
+                  %ul
+                    / legal notice
+                    %li.show-for-medium-up
+                      %h4 Website
+                      %p
+                        %a{:href => "http://www.vinner-plus.com"} www.vinner-plus.com
+                    %li.show-for-medium-up
+                      %h4 Найди нас на
+                      / Begin of Social links
+                      .socialnet
+                        %a{:href => "#"}
+                          %i.ion.ion-social-facebook
+                        %a{:href => "#"}
+                          %i.ion.ion-social-instagram
+                        %a{:href => "#"}
+                          %i.ion.ion-social-twitter
+                        %a{:href => "#"}
+                          %i.ion.ion-social-pinterest
+                        %a{:href => "#"}
+                          %i.ion.ion-social-tumblr
+                    / End of Social links
+                    %li
+                      %p
+                        %img.logo{:alt => "Logo", :src => "img/logo_large.png"}/
+                      %p.small
+                        %strong
+                          %a{:href => "http://vinner-plus.com"} VinnerPlus©2017
+                        All right reserved
+      / End of page SubSection
+      #s-message.slide.fp-slide.fp-table{"data-anchor" => "con/mssg", :style => "width: 50%;"}
+        .fp-tableCell.fp-content{:style => "height: 609px;"}
+          %section.content
+            %header.p-title
+              %h3
+                Write to us
+                %i.ion.ion-email
+              %ul.buttons
+                %li.show-for-medium-up
+                  %a{:href => "#ab", :title => "About"}
+                    %i.ion.ion-android-information
+                %li
+                  %a{:href => "#information", :title => "Contact"}
+                    %i.ion.ion-location
+            /
+            /      <li>
+            /      <a title="Message" href="#contact/message"><i class="ion ion-email"></i></a>
+            /      </li>
+            / Begin Of Page SubSction
+            .page-block.c-right.v-zoomIn
+              .wrapper
+                %div
+                  %form.message.form.send_message_form{:action => "ajaxserver/serverfile.php", :method => "get"}
+                    .fields.clearfix
+                      .input
+                        %label{:for => "mes-name"} Name
+                        %input#mes-name{:name => "name", :placeholder => "Your Name", :required => "", :type => "text"}/
+                      .buttons
+                        %button#submit-message.button.email_b{:name => "submit_message"} Ok
+                    .fields.clearfix
+                      .input
+                        %label{:for => "mes-email"} Email
+                        %input#mes-email{:name => "email", :placeholder => "Email Address", :required => "", :type => "email"}/
+                    .fields.clearfix.no-border
+                      %label{:for => "mes-text"} Message
+                      %textarea#mes-text{:name => "message", :placeholder => "Message ...", :required => ""}
+                      %div
+                        %p.message-ok.invisible Your message has been sent, thank you.
+  / End Of Page SubSction
+  .fp-controlArrow.fp-prev
+  .fp-controlArrow.fp-next
+

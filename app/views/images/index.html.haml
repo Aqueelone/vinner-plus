@@ -1,0 +1,37 @@
+#adminpanel
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend List of images
+      = bootstrap_icon_link_to t('admins.admin_panel.new_image'), new_image_path, "glyphicon glyphicon-plus icon-white", :class => "button btn btn-success"
+      %table.table.table-index.table-bordered.table-condensed{:role => "grid"}
+        %thead
+          %tr
+            %th{:scope => "column"} Description
+            %th{:scope => "column"} Image
+            %th{:scope => "column"}
+        %tbody
+          - @images.each do |b|
+            %tr
+              %td
+                = b.title
+                %br
+                = b.description
+              %td= attachment_image_tag(b, :file, :fill, 400, 300, fallback: "default300x400.png")
+              %td
+                = bootstrap_icon_link_to t(:_show), b, "glyphicon glyphicon-book icon-white", method: :get, :class => "button btn btn-small btn-primary"
+                = bootstrap_icon_link_to t(:_edit), edit_image_path(b), "glyphicon glyphicon-pencil icon-white", :class => "button btn btn-small btn-primary"
+                = bootstrap_icon_link_to t(:_delete), b, "glyphicon glyphicon-trash icon-white", confirm: 'Are you sure?', method: :delete, :class => "button btn btn-small btn-danger"
+                %br
+                %span
+                  in:
+                %br
+                = b.category_id && Category.find(b.category_id).name
+                %br
+                = b.gallery_id && (bootstrap_icon_link_to (g = Gallery.find(b.gallery_id)).name, g, "glyphicon glyphicon-list icon-white")
+:javascript
+  $('.navbar-nav li').removeClass('active');
+  $('.navbar-nav li.btn-nav-adminpanel').addClass('active');
+  $('.adminbar-nav li').removeClass('active');
+  $('.adminbar-nav li.btn-nav-image').addClass('active');

@@ -1,0 +1,20 @@
+= form_for(@gallery) do |f|
+  - if @gallery.errors.any?
+    .alert.alert-error
+      %b
+        = pluralize(@gallery.errors.count, "error")
+        prohibited this gallery from being saved:
+      %ul
+        - @gallery.errors.full_messages.each do |msg|
+          %li= msg
+  %table.table-striped.table-bordered.table-condensed.table-user-form{:role => "grid"}
+    %tr
+      %td{:scope => "row"}= f.label :name
+      %td= f.text_field :name_ru, class: "name_field"
+    %tr
+      %td{:scope => "row"}= f.label :description
+      %td= f.text_area :description_ru, class: "name_field"
+    %tr
+      %td= bootstrap_icon_link_to t(:_cansel), galleries_path, 'glyphicon glyphicon-time icon-white', :class => "button btn btn-warning"
+      %td
+        = f.submit :class => "button btn btn-success"

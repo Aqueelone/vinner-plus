@@ -1,0 +1,35 @@
+#adminpanel
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend
+        = t('activerecord.attributes.category.profile') + @category.name_ru
+      %table.table.table-striped.table-bordered.table-condensed.table-user-profile{:role => "grid"}
+        %tr
+          %td{:scope => "row"}
+            = t('activerecord.attributes.category.name_ru')
+          %td= @category.name_ru
+        %tr
+          %td{:scope => "row"}
+            = t('activerecord.attributes.category.visible')
+          %td= @category.visible
+        %tr
+          %td{:scope => "row"}
+            = t('activerecord.attributes.category.image')
+          %td= attachment_image_tag(@category, :image, :fill, 120, 120, fallback: "default120x120.png")
+        %tr
+          %td{:scope => "row"}
+            = t('activerecord.attributes.category.parent')
+          %td= @category.parent_id && Category.find(@category.parent_id).name_ua
+        %tr
+          %td{:scope => "row"}
+          %td
+            = bootstrap_icon_link_to t(:_edit), edit_category_path(@category), "glyphicon glyphicon-pencil icon-white", :class => "button btn btn-small btn-primary"
+            - if current_user.is_admin
+              = bootstrap_icon_link_to t(:_delete), @category, "glyphicon glyphicon-trash icon-white", confirm: 'Are you sure?', method: :delete, :class => "button btn btn-small btn-danger"
+:javascript
+  $('.navbar-nav li').removeClass('active');
+  $('.navbar-nav li.btn-nav-adminpanel').addClass('active');
+  $('.adminbar-nav li').removeClass('active');
+  $('.adminbar-nav li.btn-nav-category').addClass('active');

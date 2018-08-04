@@ -1,0 +1,33 @@
+.adminbar-quiqnav
+  = render partial: 'category_select'
+%ul{class: ['nav', 'adminbar-nav']}
+  %li{class: ['direct', 'btn-nav-dashboard', 'active']}
+    %a{href: "#{adminpanel_path}", class: 'gradient'}
+      %i{class: [ 'fa', 'fa-dashboard']}
+      =t('activerecord.models.dashboard')
+  %li{class: ['direct', 'btn-nav-user', 'btn-nav-catalog']}
+    %a{href: "#{users_path}"}
+      %i{class: [ 'fa', 'fa-user']}
+      =t('activerecord.models.user')
+  %li{class: ['direct', 'btn-nav-category']}
+    %a{href: "#{categories_path}"}
+      %i{class: [ 'fa', 'fa-bars']}
+      =t('activerecord.models.category')
+  %li{class: ['direct', 'btn-nav-image']}
+    %a{href: "#{images_path}"}
+      %i{class: [ 'fa', 'fa-picture-o']}
+      =t('activerecord.models.image')
+  %li{class: ['direct', 'btn-nav-product_code']}
+    %a{href: "#product"}
+      %i{class: [ 'fa', 'fa-sticky-note']}
+      =t('activerecord.models.product_code')
+  %li{class: ['direct', 'btn-nav-payment_type']}
+    %a{href: "#product"}
+      %i{class: [ 'fa', 'fa-credit-card-alt']}
+      =t('activerecord.models.payment_type')
+  %li{class: ['direct', 'btn-nav-order']}
+    %a{href: "#product"}
+      %i{class: [ 'fa', 'fa-briefcase']}
+      =t('activerecord.models.order')
+:javascript
+  $(".quiq-link").hide();

@@ -1,0 +1,25 @@
+#s-register.section.page-register.page.page-cent.fp-section.fp-table{"data-anchor" => "reg", :style => "height: 609px;"}
+  .fp-tableCell.fp-content{:style => "height: 609px;"}
+    %section.content
+      %header.p-title
+        %h3
+          Подписка
+          %i.ion.ion-compose
+      %div
+        %form#mail-subscription.form.magic.send_email_form{:action => "ajaxserver/serverfile.php", :method => "get"}
+          %p.invite.center Пожалуйста, впишите ваш email чтобы оставаться с нами на связи
+          .fields.clearfix
+            .input
+              %label{:for => "reg-email"} Email
+              %input#reg-email.email_f{"data-validation-type" => "email", :name => "email", :placeholder => "ваш@элетронный.адресс", :required => "", :type => "email"}/
+            .buttons
+              %button#submit-email.button.email_b{:name => "submit_email"} Ok
+          %p.email-ok.invisible
+            %strong Спасибо вам
+            за Вашу подписку. Мы свяжемся с Вами обязательно.
+    %footer.p-footer.p-scrolldown
+      %a{:href => "#ab"}
+        .arrow-d
+          .before про
+          .after Vinner Plus
+          .circle

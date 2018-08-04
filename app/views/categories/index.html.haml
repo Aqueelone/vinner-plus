@@ -1,0 +1,55 @@
+#adminpanel
+  = render 'admin_menu'
+  = show_flash
+  .tab-content
+    %fieldset
+      %legend
+        = t('activerecord.attributes.category.index')
+      = bootstrap_icon_link_to t('admins.admin_panel.new_category'), new_category_path, "glyphicon glyphicon-plus icon-white", :class => "button btn btn-success btn-new"
+      %table.table.table-index.table-bordered.table-condensed{:role => "grid"}
+        %thead
+          %tr
+            %th{:scope => "column"}
+            %th{:scope => "column"}
+              = t('activerecord.attributes.category.name')
+            %th{:scope => "column"}
+              = t('activerecord.attributes.category.visible')
+            %th{:scope => "column"}
+              = t('activerecord.attributes.category.image')
+            %th{:scope => "column"}
+        %tbody
+          - @categories.where("categories.parent_id IS NULL").each do |c|
+            %tr
+              %td
+                = bootstrap_icon_link_to '', '#', "glyphicon-plus", :class => "btn-small btn-toggle btn-toggle-plus", id: "toggle-plus-#{c.id}"
+                = bootstrap_icon_link_to '', '#', "glyphicon-minus", :class => "btn-small btn-toggle btn-toggle-minus btn-hide", id: "toggle-minus-#{c.id}"
+              %td= c.name
+              %td= c.visible
+              %td= attachment_image_tag(c, :image, :fill, 120, 120, fallback: "default120x120.png")
+              %td
+                = bootstrap_icon_link_to t(:_show),c, "glyphicon glyphicon-book icon-white", method: :get, :class => "button btn btn-small btn-primary"
+                = bootstrap_icon_link_to t(:_edit), edit_category_path(c), "glyphicon glyphicon-pencil icon-white", :class => "button btn btn-small btn-primary"
+                = bootstrap_icon_link_to t(:_delete), c, "glyphicon glyphicon-trash icon-white", confirm: 'Are you sure?', method: :delete, :class => "button btn btn-small btn-danger"
+            - @categories.where("categories.parent_id = #{c.id}").each do |cc|
+              %tr.row-hide{class: "row-toggle-#{c.id}"}
+                %td.td-row-child
+                %td= cc.name
+                %td= cc.visible
+                %td= attachment_image_tag(cc, :image, :fill, 120, 120, fallback: "default120x120.png")
+                %td
+                  = bootstrap_icon_link_to t(:_show),cc, "glyphicon glyphicon-book icon-white", method: :get, :class => "button btn btn-small btn-primary"
+                  = bootstrap_icon_link_to t(:_edit), edit_category_path(cc), "glyphicon glyphicon-pencil icon-white", :class => "button btn btn-small btn-primary"
+                  = bootstrap_icon_link_to t(:_delete), cc, "glyphicon glyphicon-trash icon-white", confirm: 'Are you sure?', method: :delete, :class => "button btn btn-small btn-danger"
+:javascript
+  $('.navbar-nav li').removeClass('active');
+  $('.navbar-nav li.btn-nav-adminpanel').addClass('active');
+  $('.adminbar-nav li').removeClass('active');
+  $('.adminbar-nav li.btn-nav-category').addClass('active');
+  $('.btn-toggle').on('click', function(event){
+        event.stopPropagation();
+        event.preventDefault();
+        id = $(event.currentTarget).attr('id').replace('toggle-plus-', '').replace('toggle-minus-', '');
+        $('#toggle-plus-'+id).toggleClass('btn-hide');
+        $('#toggle-minus-'+id).toggleClass('btn-hide');
+        $('.row-toggle-'+id).toggleClass('row-hide');
+  });

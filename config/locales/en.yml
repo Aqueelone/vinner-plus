@@ -1,0 +1,140 @@
+en:
+  home-slider:
+    t1: 'Easy way to achieve success!'
+    t2: 'world of textile'
+  about:
+    p1: ''
+    p2: ''
+    p3: ''
+    p4: 'Welcome to the World of Marbi!'
+  # Standard words
+  title: 'World of Marbi'
+  settings: "Settings"
+  profile: "Profile"
+  account: "Account"
+  privacy: "Privacy"
+  privacy_policy: "Privacy policy"
+  terms_and_conditions: "Terms and conditions"
+  _accessories: "Accessories"
+  _services: "Services"
+  _about: "About Us"
+  _catalog: "Catalog"
+  _contact_us: "Contact Us!"
+  _order: "Order"
+  _applications: "Applications"
+  _photos: "Photos"
+  _help: "Help"
+  _furthermore: "furthermore..."
+  _showcase: "showcase"
+  _grid: "grid"
+  _topic: "Site topics"
+  orders:
+    new:
+      header: "New Order"
+      name: "name and surname"
+      email: "email"
+      cell: "cell phone"
+      comment: "comment"
+      pname: "insert your name..."
+      pemail: "insert your e-mail..."
+      pcell: "insert your number of cell..."
+      pcomment: "write a comment..."
+      cost: "Total cost"
+      payment: "Payment type"
+      place: "Submit the Order"
+    items:
+      caption: "Included order items:"
+      amount: "Amount"
+      total: "Total"
+      sizes: "Sizes in pack"
+      preview: "Preview"
+      pcode: "Product Code"
+      color: "Color"
+      approve:
+        yes: "SEND ORDER!"
+        no: "Nope contacts for communication!"
+    history:
+      header: "Orders History"
+      blank: "No history yet..."
+      table:
+        order_status: "status"
+        payment_type: "payment type"
+        updated_at: "updated at"
+        your_manager: "Your manager"
+        items: "items"
+        total: "total"
+  product:
+      add_order: "add to the Order"
+      back_to_catalog:  "back to the Catalog"
+      move_to_order:  "turn to the Order"
+  category:
+      two: "Men's shirt with long sleeves"
+      three: "Men's shirts with short sleeves"
+      ten: "Men's t-shirts"
+  contactus:
+      desc: "Contact us and we answer to all Your questions!"
+  ok: "OK"
+  cancel: "Cancel"
+  delete: "Delete"
+  hide: "Hide"
+  ignore: "Ignore"
+  undo: "Undo?"
+  or: "or"
+  ago: "%{time} ago"
+  username: "Username"
+  email: "Email"
+  password: "Password"
+  password_confirmation: "Password confirmation"
+  are_you_sure: "Are you sure?"
+  are_you_sure_delete_account: "Are you sure you want to close your account? This can’t be undone!"
+  fill_me_out: "Fill me out"
+  back: "Back"
+  public: "Public"
+  limited: "Limited"
+  search: "Search"
+  nsfw: "NSFW"
+  find_people: "Find people or #tags"
+  _home: "Home"
+  more: "More"
+  next: "Next"
+  previous: "Previous"
+  _comments: "Comments"
+  all_aspects: "All aspects"
+  no_results: "No results found"
+  _contacts: "Contacts"
+  welcome: "Welcome!"
+  _terms: "Terms"
+  _statistics: "Statistics"
+
+  # For reference translation; the real ActiveRecord English transations are actually
+  # in the en-US, en-GB, and en-AU yml files.
+  activerecord:
+    attributes:
+      product:
+        name: "name"
+        brand: "brand"
+        category: "category"
+        description: "description"
+        price: "price"
+        amount: "amount"
+        sizes: "sizes"
+        cut_type: "cut_type"
+        collar_type: "collar_type"
+        sleeve_type: "sleeve_type"
+        cuff_type: "cuff_type"
+        style_type: "style_type"
+        picture: "picture"
+        index: "Products list:"
+        profile: "Product profile: "
+        edit: "Product edit: "
+        new: "Product add: "
+      fabric:
+        name: "name"
+        category: "category"
+        description: "description"
+        image: "image"
+        composition: "composition"
+        index: "Fabrics list:"
+        profile: "Fabric profile: "
+        edit: "Fabric edit: "
+        new: "Fabric add: "
